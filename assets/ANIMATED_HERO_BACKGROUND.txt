@@ -1,0 +1,2 @@
+Hero uses animated CSS + layered SVG (hero_abstract.svg). No video required.
+Motion: Balanced, Glow: Medium.

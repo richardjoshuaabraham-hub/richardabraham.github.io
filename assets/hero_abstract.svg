@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a33"/>
+      <stop offset="0.55" stop-color="#113768"/>
+      <stop offset="1" stop-color="#001a33"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="30%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#0598ce" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#0598ce" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0598ce" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 .7 0" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#0598ce" stroke-opacity="0.10" stroke-width="1"/>
+      <path d="M32 0V64M0 32H64" fill="none" stroke="#113768" stroke-opacity="0.20" stroke-width="1"/>
+    </pattern>
+
+    <linearGradient id="pipe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0598ce" stop-opacity="0.75"/>
+      <stop offset="0.45" stop-color="#8fe4ff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0598ce" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <linearGradient id="pipeWarm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0598ce" stop-opacity="0.28"/>
+      <stop offset="0.5" stop-color="#113768" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#0598ce" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="2400" height="1350" fill="url(#bg)"/>
+  <rect width="2400" height="1350" fill="url(#glow)"/>
+  <rect width="2400" height="1350" fill="url(#grid)" opacity="0.55"/>
+
+  <!-- "City" blocks -->
+  <g opacity="0.70" filter="url(#softGlow)">
+    <g fill="none" stroke="#0598ce" stroke-opacity="0.35" stroke-width="2">
+      <path d="M280 980 L280 720 L520 580 L520 840 Z"/>
+      <path d="M520 840 L520 580 L740 650 L740 910 Z"/>
+      <path d="M980 1030 L980 640 L1220 520 L1220 910 Z"/>
+      <path d="M1220 910 L1220 520 L1480 610 L1480 1010 Z"/>
+      <path d="M1680 980 L1680 700 L1960 560 L1960 840 Z"/>
+      <path d="M1960 840 L1960 560 L2200 640 L2200 920 Z"/>
+    </g>
+
+    <g fill="none" stroke="#113768" stroke-opacity="0.65" stroke-width="1.5">
+      <path d="M280 720 L520 580 L740 650 L980 640 L1220 520 L1480 610 L1680 700 L1960 560 L2200 640"/>
+      <path d="M260 980 L520 840 L740 910 L980 1030 L1480 1010 L1680 980 L2200 920"/>
+    </g>
+  </g>
+
+  <!-- Pipe runs -->
+  <g fill="none" stroke="url(#pipe)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" filter="url(#softGlow)">
+    <path d="M120 1010 C420 900, 520 860, 760 920 S1200 1070, 1500 990 S1900 860, 2360 920"/>
+    <path d="M260 620 C560 520, 740 560, 980 640 S1440 780, 1700 700 S2060 540, 2320 600"/>
+  </g>
+
+  <g fill="none" stroke="url(#pipeWarm)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.65">
+    <path d="M220 860 C520 760, 700 790, 940 860 S1380 990, 1620 920 S2020 760, 2260 800"/>
+    <path d="M520 1080 C760 980, 1020 970, 1220 1020 S1600 1160, 1860 1080 S2140 980, 2320 1000"/>
+  </g>
+
+  <!-- Vertical risers -->
+  <g stroke="#0598ce" stroke-opacity="0.35" stroke-width="3" filter="url(#softGlow)">
+    <path d="M560 930 L560 700"/>
+    <path d="M610 950 L610 670"/>
+    <path d="M1160 980 L1160 640"/>
+    <path d="M1205 960 L1205 610"/>
+    <path d="M1780 930 L1780 690"/>
+    <path d="M1830 960 L1830 660"/>
+  </g>
+
+  <!-- Nodes -->
+  <g fill="#0598ce" opacity="0.55">
+    <circle cx="560" cy="700" r="6"/>
+    <circle cx="610" cy="670" r="6"/>
+    <circle cx="1160" cy="640" r="6"/>
+    <circle cx="1205" cy="610" r="6"/>
+    <circle cx="1780" cy="690" r="6"/>
+    <circle cx="1830" cy="660" r="6"/>
+  </g>
+</svg>
